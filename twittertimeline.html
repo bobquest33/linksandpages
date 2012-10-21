@@ -32,14 +32,14 @@
 </head>
 <body class="yui-skin-sam">
 	<div class="yui-gd">
-	div class="yui-u first">
+	<div class="yui-u first">
                 <h2>Twitter Timeline</h2>
                 <div id="res"></div>
 	        </div>	
 	</div>
 <script src="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.js"></script>
 <script type="text/javascript" src="http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js"></script>
-<script type="text/javascript" src="http://github.com/davglass/yui-yql/raw/master/yql-min.js"></script>
+<script type="text/javascript" src="yql-min.js"></script>
 <script type="text/javascript">
 YUI({
     logExclude: {
@@ -55,31 +55,33 @@ YUI({
 
 
     var q3 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
-        if (r.query.results) {
-            var data = r.query.results.entry;
-            var h2 = Y.Node.create('<h2><img src="' + data[0].link[1].href + '"> Twitter: ' + data[0].author.name + '</h2>');
-            var ul = Y.Node.create('<ul class="twitter"></ul>');
-            Y.each(data, function(v) {
-                var title = v.title;
-                var len = title.indexOf(':');
-                title = title.substring(len + 2);
-                title = title.replace(/[@]+[A-Za-z0-9-_]+/g, function(f, n, s) {
-                    return '<a href="http://twitter.com/' + f.replace('@', '') + '">' + f + '</a>';
-                });            
-                var li = Y.Node.create('<li>' + title + '<span></span></li>');
-                ul.appendChild(li);
-            },{env='https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
-            var wrap = Y.Node.create('<div id="twitter" class="mod"></div>');
-            wrap.appendChild(h2);
-            wrap.appendChild(ul);
-            res.appendChild(wrap);
-            ul.all('li').each(function(v, k) {
-                if (!(k % 2)) {
-                    v.addClass('odd');
-                }
-            });
-        }
-    });
+        if(r){
+		if (r.query.results) {
+		    var data = r.query.results.statuses.status;
+		    var h2 = Y.Node.create('<h2><img src="' + data[0].user.profile_image_url + '"> Twitter: ' + data[0].user.screen_name + '</h2>');
+		    var ul = Y.Node.create('<ul class="twitter"></ul>');
+		    Y.each(data, function(v) {
+			var title = v.text;
+			var len = title.indexOf(':');
+			title = title.substring(len + 2);
+			title = title.replace(/[@]+[A-Za-z0-9-_]+/g, function(f, n, s) {
+			    return '<a href="http://twitter.com/' + f.replace('@', '') + '">' + f + '</a>';
+			});            
+			var li = Y.Node.create('<li>' + title + '<span></span></li>');
+			ul.appendChild(li);
+		    });
+		    var wrap = Y.Node.create('<div id="twitter" class="mod"></div>');
+		    wrap.appendChild(h2);
+		    wrap.appendChild(ul);
+		    res.appendChild(wrap);
+		    ul.all('li').each(function(v, k) {
+			if (!(k % 2)) {
+			    v.addClass('odd');
+			}
+		    });
+		}
+	}
+    },{env:'https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
 });
 
 </script>
