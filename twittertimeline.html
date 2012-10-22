@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
 <link rel="stylesheet" href="http://blog.davglass.com/files/yui/css/davglass.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.css">    
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
+
 <style type="text/css" media="screen">
         p, h2 {
             margin: 1em;
@@ -32,15 +34,47 @@
 </head>
 <body class="yui-skin-sam">
 	<div class="yui-gd">
-	<div class="yui-u first">
-                <h2>Twitter Timeline</h2>
-                <div id="res"></div>
-	        </div>	
-	</div>
-<script src="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.js"></script>
+			<div class="yui-u first">
+				<h2>Twitter Timeline</h2>
+
+
+				<div id="tabvw" class="yui-navset">
+					<ul class="yui-nav">
+						<li class="selected">
+							<a id='tab1' href="#tab1"><em>My Twitters</em></a>
+						</li>
+						<li>
+							<a id='tab2' href="#tab2"><em>Twitter of friends</em></a>
+						</li>
+					</ul>
+
+					<div class="yui-content">
+						<div>
+							<p>
+								<div id="res" ></div>
+							</p>
+						</div>
+						<div>
+							<p>
+								<div id="res1" ></div>
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+<script type="text/javascript" src="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.js"></script>
 <script type="text/javascript" src="http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/tabview/tabview-min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="yql-min.js"></script>
+
 <script type="text/javascript">
+var myTabs = new YAHOO.widget.TabView("tabvw",{ activeIndex: 0 });
+var currentTab = 0;
 YUI({
     logExclude: {
         'YUI': true,
@@ -51,7 +85,7 @@ YUI({
     }    
 }).use('node', 'yql', function(Y) {
     var res = Y.one('#res');
-
+    var res1 = Y.one('#res1');
 
 
     var q3 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
@@ -62,12 +96,13 @@ YUI({
 		    var ul = Y.Node.create('<ul class="twitter"></ul>');
 		    Y.each(data, function(v) {
 			var title = v.text;
-			var len = title.indexOf(':');
-			title = title.substring(len + 2);
-			title = title.replace(/[@]+[A-Za-z0-9-_]+/g, function(f, n, s) {
-			    return '<a href="http://twitter.com/' + f.replace('@', '') + '">' + f + '</a>';
-			});            
-			var li = Y.Node.create('<li>' + title + '<span></span></li>');
+			var user  = '[<img src="' + v.user.profile_image_url + '">' + v.user.screen_name + ']';
+			//var len = title.indexOf(':');
+			//title = title.substring(len + 2);
+			//title = title.replace(/[@]+[A-Za-z0-9-_]+/g, function(f, n, s) {
+			//    return '<a href="http://twitter.com/' + f.replace('@', '') + '">' + f + '</a>';
+			//});            
+			var li = Y.Node.create('<li>'+user + title + '<span></span></li>');
 			ul.appendChild(li);
 		    });
 		    var wrap = Y.Node.create('<div id="twitter" class="mod"></div>');
@@ -82,7 +117,44 @@ YUI({
 		}
 	}
     },{env:'https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
+        var q3 = new Y.yql('select * from twitter.status.timeline.friends', function(r) {
+        if(r){
+		if (r.query.results) {
+		    var data = r.query.results.statuses.status;
+		    var h2 = Y.Node.create('<h2> Twitter from Friends </h2>');
+		    var ul = Y.Node.create('<ul class="twitter"></ul>');
+		    Y.each(data, function(v) {
+			var title = v.text;
+			var user  = '[<img src="' + v.user.profile_image_url + '">' + v.user.screen_name + ']';
+			//var len = title.indexOf(':');
+			//title = title.substring(len + 2);
+			//title = title.replace(/[@]+[A-Za-z0-9-_]+/g, function(f, n, s) {
+			//    return '<a href="http://twitter.com/' + f.replace('@', '') + '">' + f + '</a>';
+			//});            
+			var li = Y.Node.create('<li>'+user + title + '<span></span></li>');
+			ul.appendChild(li);
+		    });
+		    var wrap = Y.Node.create('<div id="twitter" class="mod"></div>');
+		    wrap.appendChild(h2);
+		    wrap.appendChild(ul);
+		    res1.appendChild(wrap);
+		    ul.all('li').each(function(v, k) {
+			if (!(k % 2)) {
+			    v.addClass('odd');
+			}
+		    });
+		}
+	}
+    },{env:'https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
 });
+    var tab0 = myTabs.getTab(0);
+    var tab1 = myTabs.getTab(1);
+ 	function handleClick(e) {  
+ 		currentTab = (currentTab+1)%2;
+   		myTabs.set('activeIndex', currentTab);
+	}
+ 	tab0.addListener('click', handleClick);
+ 	tab1.addListener('click', handleClick);
 
 </script>
 </body>
