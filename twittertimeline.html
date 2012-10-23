@@ -91,8 +91,9 @@ YUI({
     var q3 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
         if(r){
 		if (r.query.results) {
-		    var data = r.query.results.statuses.status;
-		    var h2 = Y.Node.create('<h2><img src="' + data[0].user.profile_image_url + '"> Twitter: ' + data[0].user.screen_name + '</h2>');
+		    var data = r.query.results.statuses.status;			
+		    //var h2 = Y.Node.create('<h2><img src="' + data[0].user.profile_image_url + '"> Twitter: ' + data[0].user.screen_name + '</h2>');
+		    var h2 = Y.Node.create('<h2>My Twitter</h2>');
 		    var ul = Y.Node.create('<ul class="twitter"></ul>');
 		    Y.each(data, function(v) {
 			var title = v.text;
