@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
 <link rel="stylesheet" href="http://blog.davglass.com/files/yui/css/davglass.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.css">    
+
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
 
 <style type="text/css" media="screen">
@@ -37,7 +38,10 @@
 			<div class="yui-u first">
 				<h2>Twitter Timeline</h2>
 
-
+				<button id="refbutton" class="yui3-button ">Fetch Tweets</button>
+				
+				<p>
+				
 				<div id="tabvw" class="yui-navset">
 					<ul class="yui-nav">
 						<li class="selected">
@@ -86,7 +90,10 @@ YUI({
 }).use('node', 'yql', function(Y) {
     var res = Y.one('#res');
     var res1 = Y.one('#res1');
-
+	var button = Y.one('#refbutton');
+	button.on('click', function (e) {
+    res.set('text','');
+    res1.set('text','');
 
     var q1 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
         if(r){
@@ -147,6 +154,7 @@ YUI({
 		}
 	}
     },{env:'https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
+    });
 });
     var tab0 = myTabs.getTab(0);
     var tab1 = myTabs.getTab(1);
