@@ -88,7 +88,7 @@ YUI({
     var res1 = Y.one('#res1');
 
 
-    var q3 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
+    var q1 = new Y.yql('select * from twitter.status.timeline.user', function(r) {
         if(r){
 		if (r.query.results) {
 		    var data = r.query.results.statuses.status;			
@@ -118,7 +118,7 @@ YUI({
 		}
 	}
     },{env:'https:/'+'/raw.github.com/bobquest33/linksandpages/master/twittersafe.txt'});
-        var q3 = new Y.yql('select * from twitter.status.timeline.friends', function(r) {
+        var q2 = new Y.yql('select * from twitter.status.timeline.friends', function(r) {
         if(r){
 		if (r.query.results) {
 		    var data = r.query.results.statuses.status;
