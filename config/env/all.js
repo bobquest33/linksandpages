@@ -5,7 +5,8 @@ var rootPath = path.normalize(__dirname + '/../..');
 
 module.exports = {
 	root: rootPath,
-	port: process.env.PORT || 3000,
+	//port: process.env.PORT || 3000,
+	port: process.env.PORT || 4000,
 	db: process.env.MONGOHQ_URL,
 
 	// The secret should be set to a non-guessable string that
