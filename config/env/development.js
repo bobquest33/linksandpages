@@ -2,7 +2,7 @@
 
 module.exports = {
     //db: "mongodb://localhost/mean-dev",
-	db: "mongodb://lnpadv:lnpadv13579#@ds027668.mongolab.com:27668/lnpa",
+	db: "mongodb://lnpadv:lnpadv13579@ds027668.mongolab.com:27668/lnpa",
 	//db: "mongodb://lnpadv:lnpadv1234#@troup.mongohq.com:10079/lnpadv",
     app: {
         name: "LnPa Notes - Development"
