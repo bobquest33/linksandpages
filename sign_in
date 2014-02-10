@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link href="//d16d6a9zzjdggg.cloudfront.net/assets/bitnami-b63c7a4e03a22104dc30c12c748a598d.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="//d16d6a9zzjdggg.cloudfront.net/assets/bitnami-3df5ad6fcc20c3cf373e3a2ce81e0099.js" type="text/javascript"></script>
+<script src="//use.typekit.net/dmw5opo.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    try{Typekit.load();}catch(e){}
+  //]]>
+</script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="HPX0QZOqYrXzO5TeSN+unF1pQdcLLA4IsCUYkps8NgE=" name="csrf-token" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1874455-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+
+<link href='/favicon.png' rel='shortcut icon'>
+</head>
+<body>
+<div class='cloud-hosting-background' id='main-wrapper'>
+<div class='hidden' id='root_url'>https://app.bitnamihosting.com</div>
+<div class='hidden' id='root_path'></div>
+<div id='bitnami-hosting-main'>
+<div class='row'>
+<div class='container'>
+<div class='offset1 span10'>
+<div class='pagination-right margintop10 marginright10'>
+<a href="/sign_in" title="English"><img alt="Us" src="//d16d6a9zzjdggg.cloudfront.net/assets/flags/us-ef6e4163770a15426d648755484a82fe.png" /></a>
+<a href="/es/sign_in" title="Spanish"><img alt="Es" src="//d16d6a9zzjdggg.cloudfront.net/assets/flags/es-d3221d2afb0a78956f2a289193d931f6.png" /></a>
+</div>
+<div class='center textcenter margintop30 marginbottom30' id='loginPageHeader'>
+<h1>
+Bitnami
+<strong>Hosting</strong>
+</h1>
+</div>
+<div class='row margintop50'>
+<div class='offset2 span6 round-quad-white'>
+<div class='round-quad-contents' style='font-size: 16px !important;'>
+<p>
+Bitnami Cloud Hosting simplifies the process of deploying and managing open source and other applications on the Amazon Cloud. It provides one-click deployment for a vast library of tested, ready-to-run applications, such as Alfresco, Drupal, SugarCRM, Wordpress, Joomla!, Redmine and many others.
+<a href="https://bitnami.com/cloud">Learn more</a>
+</p>
+<div class='row-fluid margintop20'>
+<div class='span6'>
+<a href="/auth/bitnami" class="btn btn-primary btn-large input-block-level">Access BCH Console</a>
+</div>
+<div class='span6'>
+<a href="http://bitnami.com" class="btn btn-large input-block-level">Visit Bitnami</a>
+</div>
+</div>
+</div>
+</div>
+<div class='span2'></div>
+</div>
+<div class='paddingtop50'></div>
+
+</div>
+</div>
+<div class='row margintop20 paddingbottom15' id='stacks'>
+<div class='container'>
+<div class='offset2 span8'>
+<div class='row-fluid bch-stacks-row'>
+<div class='span2'><img alt="MediaWiki" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/mediawiki/img/mediawiki-298e7efcf3d7085174c558eeb5861141.png" /></div>
+<div class='span2'><img alt="WordPress" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/wordpress/img/wordpress-5447d679fff0858382b829ebb563bb8b.png" /></div>
+<div class='span2'><img alt="Drupal" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/drupal/img/drupal-92b986ef95a1a0306eb5686d198649b6.png" /></div>
+<div class='span2'><img alt="Joomla" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/joomla/img/joomla-be80f7ebf2af200d4e1160dbf10a66fe.png" /></div>
+<div class='span2'><img alt="DokuWiki" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/dokuwiki/img/dokuwiki-4cf753b28e1fbb3435e5abe94173d238.png" /></div>
+<div class='span2'><img alt="Alfresco" src="//d16d6a9zzjdggg.cloudfront.net/assets/logo-images/alfresco/img/alfresco-811dea5677215fe6ad6eacba950e608f.png" /></div>
+</div>
+</div>
+</div>
+</div>
+<div class='margintop10'>
+<p class='tiny' style='text-align: center;'>
+&copy; 2014, <a href="http://bitnami.com" target="_blank">Bitnami</a>. All rights reserved.
+<img align="absmiddle" alt="|" class="footer_bar" src="//d16d6a9zzjdggg.cloudfront.net/assets/footer_bar-dfdb22d4ebbbe2a382f3f82013d77ace.png" />
+<a href="http://bitnami.zendesk.com/account/dropboxes/20076392" class="helpdesk_link" target="_blank">Support</a>
+<img align="absmiddle" alt="|" class="footer_bar" src="//d16d6a9zzjdggg.cloudfront.net/assets/footer_bar-dfdb22d4ebbbe2a382f3f82013d77ace.png" />
+<a href='http://wiki.bitnami.com/Bitnami_Hosting/Privacy_Policy' target='_blank'>
+Privacy Policy
+</a>
+<img align="absmiddle" alt="|" class="footer_bar" src="//d16d6a9zzjdggg.cloudfront.net/assets/footer_bar-dfdb22d4ebbbe2a382f3f82013d77ace.png" />
+<a href='http://wiki.bitnami.com/Bitnami_Hosting/Terms_of_Use' target='_blank'>
+Terms of Use
+</a>
+</p>
+
+</div>
+<div class='paddingtop50'></div>
+</div>
+<div class='span1'></div>
+</div>
+</div>
+</body>
+</html>
+<script>
+  //<![CDATA[
+    $(document).ready(function() {
+      $(".helpdesk_link").click(function() {
+        try {
+          Zenbox.show(); 
+        } catch (err) {
+          $.ajax({ 
+            url: $("#root_path").text() + '/zendesk', 
+            dataType: 'html',  
+            sync: true,
+            success: function(data) { $(data).appendTo("body");}, 
+            error: function() { 
+              window.location.href = "http://bitnami.zendesk.com/account/dropboxes/20076392"; 
+            }
+          });
+        }
+        return false;
+      });
+    });
+  //]]>
+</script>
