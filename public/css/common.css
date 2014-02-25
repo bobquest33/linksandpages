@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/*
 .navbar .nav>li>a.brand {
     padding-left:20px;
     margin-left:0
@@ -23,12 +30,7 @@ footer {
 footer p {
     padding:5px 0 12px 10px
 }
-
-html,
-body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
-}
+*/
 
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -43,7 +45,7 @@ body {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: -60px;
+  height: 60px;
   background-color: #f5f0f0;
 }
 
