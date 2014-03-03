@@ -17,7 +17,17 @@ angular.module('mean').config(['$routeProvider',
             templateUrl: 'views/articles/view.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
+            //templateUrl: 'views/index.html'
+            redirectTo: '/subscribes/create'
+
+        }).
+
+    	when('/subscribes/create', {
+            templateUrl: 'views/subscribe/create.html'
+        }).
+        when('/subscribes/:subscribeId', {
+            templateUrl: 'views/subscribe/view.html'
+
         }).
         otherwise({
             redirectTo: '/'
